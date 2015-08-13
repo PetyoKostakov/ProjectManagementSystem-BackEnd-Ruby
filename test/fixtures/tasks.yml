@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  todo: 1
+  actual: 1
+  estimate: 1
+  done: false
+
+two:
+  title: MyString
+  description: MyString
+  todo: 1
+  actual: 1
+  estimate: 1
+  done: false
