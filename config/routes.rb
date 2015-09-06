@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :tasks, except: [:new, :edit], path: '/api/tasks'
+  #root :controller => 'static', :action => '/app/'
+  #get '/', :to => redirect('/app/')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

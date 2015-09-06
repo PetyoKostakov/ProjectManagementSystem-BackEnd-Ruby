@@ -15,9 +15,7 @@ angular.module('PMS')
           });
       },
       post: function (formData, cb) {
-        $http.post('/api/tasks', {
-          task: formData
-        })
+        $http.post('/api/tasks', formData)
           .success(function (data) {
             cb(data);
           })
@@ -26,7 +24,7 @@ angular.module('PMS')
           });
       },
       put: function (id, updateData, cb) {
-        $http.put('/api/tasks/' + id,{task: updateData})
+        $http.put('/api/tasks/' + id, updateData)
           .success(function (data) {
               cb(data);
           });

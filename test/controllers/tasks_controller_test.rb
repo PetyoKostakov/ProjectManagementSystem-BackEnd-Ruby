@@ -11,17 +11,12 @@ class TasksControllerTest < ActionController::TestCase
     assert_not_nil assigns(:tasks)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
   test "should create task" do
     assert_difference('Task.count') do
       post :create, task: { actual: @task.actual, description: @task.description, done: @task.done, estimate: @task.estimate, title: @task.title, todo: @task.todo }
     end
 
-    assert_redirected_to task_path(assigns(:task))
+    assert_response 201
   end
 
   test "should show task" do
@@ -29,14 +24,9 @@ class TasksControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, id: @task
-    assert_response :success
-  end
-
   test "should update task" do
-    patch :update, id: @task, task: { actual: @task.actual, description: @task.description, done: @task.done, estimate: @task.estimate, title: @task.title, todo: @task.todo }
-    assert_redirected_to task_path(assigns(:task))
+    put :update, id: @task, task: { actual: @task.actual, description: @task.description, done: @task.done, estimate: @task.estimate, title: @task.title, todo: @task.todo }
+    assert_response 204
   end
 
   test "should destroy task" do
@@ -44,6 +34,6 @@ class TasksControllerTest < ActionController::TestCase
       delete :destroy, id: @task
     end
 
-    assert_redirected_to tasks_path
+    assert_response 204
   end
 end
