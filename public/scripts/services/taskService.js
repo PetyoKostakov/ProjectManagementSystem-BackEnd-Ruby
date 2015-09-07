@@ -15,7 +15,7 @@ angular.module('PMS')
           });
       },
       post: function (formData, cb) {
-        $http.post('/api/tasks', formData)
+        $http.post('/api/tasks', { task: formData})
           .success(function (data) {
             cb(data);
           })

@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :update, :destroy]
+  skip_before_filter :verify_authenticity_token
 
   # GET /tasks
   # GET /tasks.json
@@ -33,7 +34,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     if @task.update(task_params)
-      head :no_content
+      render json: @task
     else
       render json: @task.errors, status: :unprocessable_entity
     end
