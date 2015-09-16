@@ -6,7 +6,7 @@ angular.module('PMS')
     console.log('stask service');
     return {
       get: function (cb) {
-        $http.get('/api/tasks')
+        $http.get('/api/tasks/')
           .success(function (data) {
             cb(data);
           })
@@ -15,7 +15,7 @@ angular.module('PMS')
           });
       },
       post: function (formData, cb) {
-        $http.post('/api/tasks', { task: formData})
+        $http.post('/api/tasks/', { a: formData})
           .success(function (data) {
             cb(data);
           })
